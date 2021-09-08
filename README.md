@@ -1,7 +1,7 @@
 # Java-PubSubHubbub
 This tool is an implementation of the PubSubHubbub protocol created by Google. Information can be found @ https://developers.google.com/youtube/v3/guides/push_notifications
-
-## Basics
+Basically, the Hub Url (currently defaulted to https://pubsubhubbub.appspot.com) will send a GET request to the spring server and the server will return the hub.challenge parameter provided in the GET request. Once done, the hub returns a 202 Approved and will send POST requests when a topic's feed is updated.
+## Basics 
 ```java
 PSHServer server = PSHServer.create(MainClass.class, "external / public ip here", port);
 server.subscribe("topic / youtube url, can be found on the above link");
